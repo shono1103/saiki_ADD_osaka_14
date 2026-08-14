@@ -213,13 +213,26 @@ Playwright で実際に描画し、**スライド枠からのはみ出し・生�
 
 ## 公開する
 
+デプロイ先は **GitHub Pages（無料枠）** に固定しています。
+`main` に push すると `.github/workflows/deploy.yml` がビルドして自動で公開します。
+
+初回だけリポジトリ側の設定が必要です。
+
+1. リポジトリを **public** にする（private のまま Pages を使うには有料プランが必要）
+2. Settings → Pages → Source を「**GitHub Actions**」にする
+
+公開 URL は `https://<ユーザー名>.github.io/<リポジトリ名>/` です。
+サブパス配信になるため、ワークフローは `--base /<リポジトリ名>/` を付けてビルドしています。
+
+手元で出力を確認するときは次のとおりです。
+
 ```bash
 pnpm build   # dist/ に出力
+pnpm serve   # dist/ をローカルで配信
 ```
 
-Netlify / Vercel 用の設定ファイルを同梱しています。
-GitHub Pages は `.github/workflows/deploy.yml` により `main` への push で自動デプロイされます
-（Settings → Pages で Source を「GitHub Actions」に設定してください）。
+無料枠の目安は公開サイト 1 GB・転送量 100 GB/月（いずれもソフトリミット）。
+public リポジトリなら GitHub Actions の実行時間も無料です。
 
 ## 参考リンク
 

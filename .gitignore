@@ -1,0 +1,17 @@
+node_modules
+dist
+export
+
+.DS_Store
+*.local
+*.log
+
+# deck/ の自動バックアップ
+*.bak.md
+pages.*.bak/
+
+# Slidev が自動生成するもの
+components.d.ts
+.slidev
+.remote-assets
+.audit

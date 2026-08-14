@@ -1,0 +1,7 @@
+packages:
+  - shared
+
+# pnpm 10 以降、依存パッケージの postinstall スクリプトは既定でブロックされます。
+# PDF / PNG エクスポートに使う Chromium のダウンロードに必要なため、明示的に許可します。
+allowBuilds:
+  playwright-chromium: true

@@ -1,0 +1,12 @@
+{
+  "name": "slidev-addon-shared",
+  "version": "1.0.0",
+  "private": true,
+  "description": "台本・閲覧・本番の各デッキで共有するレイアウト / コンポーネント / スタイル",
+  "engines": {
+    "slidev": ">=52.0.0"
+  },
+  "slidev": {
+    "addon": true
+  }
+}

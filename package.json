@@ -1,0 +1,36 @@
+{
+  "name": "slidev-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "slidev deck/slides.md --open",
+    "view": "node tools/view-deck.mjs",
+    "new": "node tools/new-deck.mjs",
+    "audit": "node tools/audit-deck.mjs",
+    "build": "slidev build deck/slides.md --out ../dist",
+    "serve": "vite preview --outDir dist",
+    "pdf": "slidev export deck/slides.md --format pdf --output export/slides.pdf",
+    "pdf:clicks": "slidev export deck/slides.md --format pdf --with-clicks --output export/slides-clicks.pdf",
+    "png": "slidev export deck/slides.md --format png --output export/png",
+    "notes": "slidev export-notes deck/slides.md --output export/notes"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.19.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "slidev-addon-shared": "workspace:*",
+    "vue": "^3.5.41"
+  },
+  "devDependencies": {
+    "@slidev/parser": "^52.19.0",
+    "@slidev/types": "^52.19.0",
+    "playwright-chromium": "^1.62.1",
+    "vite": "^8.2.1"
+  }
+}

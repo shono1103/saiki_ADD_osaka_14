@@ -1,0 +1,75 @@
+/**
+ * デッキ全体に適用されるスタイル。
+ * Slidev がこのファイルを自動で読み込みます（追加の import 不要）。
+ */
+
+:root {
+  /* テーマのアクセントカラー。テーマ側の変数を上書きする */
+  --slidev-theme-primary: #3aa675;
+}
+
+/* ---------------------------------------------------------------
+ * 日本語まわりの調整
+ * ------------------------------------------------------------- */
+.slidev-layout {
+  /* 禁則処理を厳格にし、行頭・行末に句読点が来ないようにする */
+  line-break: strict;
+  /* 英単語が途中で切れないようにする */
+  overflow-wrap: break-word;
+  word-break: normal;
+  /* 約物（括弧・句読点）のアキを詰めて字面を締める */
+  font-feature-settings: 'palt' 1;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  letter-spacing: 0.02em;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  /* 日本語は行間を広めに取ると読みやすい */
+  line-height: 1.75;
+}
+
+/* コードは等幅を優先し、約物詰めを無効化する */
+.slidev-layout code,
+.slidev-layout pre {
+  font-feature-settings: normal;
+  line-break: auto;
+}
+
+/* ---------------------------------------------------------------
+ * 表紙（layout: cover）
+ * ------------------------------------------------------------- */
+.slidev-layout.cover {
+  background: linear-gradient(140deg, #f6fbf8 0%, #e6f2ec 100%);
+}
+
+.slidev-layout.cover h1 {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+html.dark .slidev-layout.cover {
+  background: linear-gradient(140deg, #12211b 0%, #0d1a15 100%);
+}
+
+/* ---------------------------------------------------------------
+ * 表
+ * ------------------------------------------------------------- */
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.slidev-layout table th {
+  background-color: rgba(58, 166, 117, 0.1);
+  text-align: left;
+}
+
+.slidev-layout table th,
+.slidev-layout table td {
+  padding: 0.4em 0.7em;
+}

@@ -1,0 +1,12 @@
+[build]
+  publish = "dist"
+  command = "pnpm build"
+
+# pnpm-lock.yaml があれば Netlify は自動で pnpm を使う
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

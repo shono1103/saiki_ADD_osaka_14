@@ -214,7 +214,14 @@ Playwright で実際に描画し、**スライド枠からのはみ出し・生�
 ## 公開する
 
 デプロイ先は **GitHub Pages（無料枠）** に固定しています。
-`main` に push すると `.github/workflows/deploy.yml` がビルドして自動で公開します。
+公開されるのは **リリースタグを push したときだけ**です。`main` への push では公開されません。
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0   # ここで .github/workflows/deploy.yml が走る
+```
+
+タグを付けずに流したいときは、Actions タブの「Deploy to GitHub Pages」から手動実行できます。
 
 初回だけリポジトリ側の設定が必要です。
 

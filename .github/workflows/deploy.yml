@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
+  # リリースタグ（v1.0.0 など）を push したときだけデプロイする。
+  # main への push では公開しない。
   push:
-    branches: [main]
+    tags: ['v*']
   workflow_dispatch:
 
 permissions:
